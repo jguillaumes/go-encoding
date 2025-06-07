@@ -1,4 +1,4 @@
-module github.com/jguillaumes/go_encoding
+module github.com/jguillaumes/go-encoding
 
 go 1.24.1
 
