@@ -97,19 +97,18 @@ func (e *encodingImpl) EncodeString(s string, code string) ([]byte, error) {
 		return nil, err
 	}
 	// Loop over the runes in s
-	var n int
 	var r rune
 	const blank rune = ' '
-	for n, r = range s {
+	for _, r = range s {
 		b, ok := (*encoder)[r]
 		if !ok {
-			log.Warnf("No encoding for the rune %v, set to an encoded space\n", r)
+			log.Warnf("No encoding for the rune %v in %s, set to an encoded space\n", r, code)
 
 			b = (*encoder)[blank]
 		}
 		tmpBuf.WriteByte(b)
 	}
-	return tmpBuf.Bytes()[0 : n+1], nil
+	return tmpBuf.Bytes()[0:tmpBuf.Len()], nil
 }
 
 func (e *encodingImpl) EncodeRune(r rune, code string) (byte, error) {
