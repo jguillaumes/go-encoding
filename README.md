@@ -8,7 +8,7 @@ It's inspired in the `ebcdic` python module, and it uses the same mechanism to g
 
 To use it, just import into your golang module:
 
-github.com/jguillaumes/go_encoding
+github.com/jguillaumes/go-encoding/encodings
 
 Out of the box, it supports the IBM-037, IBM-284, IBM-1047 and IBM-1145 EBCDIC encodings. It's very easy to add new encodings, not limited to EBCDIC codepages. The only restriction is they must encode a character in one byte.
 
